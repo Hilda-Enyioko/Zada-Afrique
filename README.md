@@ -24,16 +24,27 @@
 ## 📂 Folder Structure
 
 /components → Reusable UI components (Navbar, Footer, etc.)
+
 /pages
+
 ├── /api → Backend logic (contact form handler)
+
 ├── index.js → Home page
+
 ├── products.js → All products page
+
 ├── /product → Dynamic product details
+
 ├── contact.js → Contact form
+
 ├── about.js → Optional brand page
+
 /lib → DB connection and utilities
+
 /prisma → Prisma schema and migrations
+
 /public/images → Static assets
+
 /styles → Tailwind & global styles
 
 ---
