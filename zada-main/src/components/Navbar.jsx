@@ -1,6 +1,7 @@
 import { useState } from "react";
 import zadaLogo from "../assets/zada-vector-logo.svg";
 import zadaText from "../assets/zada-full-vector-logo.svg";
+import shoppingCart from "../assets/icons/shopping_cart.svg";
 
 function Navbar() {
   return (
@@ -33,6 +34,8 @@ function Navbar() {
           <a href="" className="nav-link">
             Customer Service
           </a>
+          <img src={shoppingCart} />
+          <a className="nav-link"></a>
         </div>
       </div>
     </>
