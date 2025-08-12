@@ -1,12 +1,13 @@
 import { useState } from "react";
+import "../styles/global.css";
 import zadaLogo from "../assets/zada-vector-logo.svg";
 import zadaText from "../assets/zada-full-vector-logo.svg";
-import shoppingCart from "../assets/icons/shopping_cart.svg";
+import shoppingCart from "../assets/icons/cart.svg";
 
 function Navbar() {
   return (
     <>
-      <div id="nav-element">
+      <div id="nav">
         <div id="logo">
           <img id="zada-logo" src={zadaLogo} alt="Zada_Logo" loading="active" />
 
@@ -34,8 +35,10 @@ function Navbar() {
           <a href="" className="nav-link">
             Customer Service
           </a>
-          <img src={shoppingCart} />
-          <a className="nav-link"></a>
+
+          <a className="nav-link cart">
+            <img src={shoppingCart} alt="Shop Here" loading="active" />
+          </a>
         </div>
       </div>
     </>
