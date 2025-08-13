@@ -1,44 +1,61 @@
 import { useState } from "react";
-import "../styles/global.css";
+import { NavLink } from "react-router-dom";
+import "../styles/navbar.css";
 import zadaLogo from "../assets/zada-vector-logo.svg";
 import zadaText from "../assets/zada-full-vector-logo.svg";
-import shoppingCart from "../assets/icons/cart.svg";
 
 function Navbar() {
   return (
     <>
       <div id="nav">
         <div id="logo">
-          <img id="zada-logo" src={zadaLogo} alt="Zada_Logo" loading="active" />
+          <a id="zada-logo" href="#">
+            <img src={zadaLogo} alt="Zada_Logo" loading="active" />
+          </a>
 
-          <img
-            id="zada-text"
-            src={zadaText}
-            alt="Zada Afrique"
-            loading="active"
-          />
+          <a id="zada-text" href="#">
+            <img src={zadaText} alt="Zada Afrique" loading="active" />
+          </a>
         </div>
 
-        <div id="nav-links">
-          <a href="" className="nav-link">
-            Home
-          </a>
+        <div id="navbar">
+          <div id="hamburger-menu">
+            <span class="material-symbols-outlined">
+              dehaze
+            </span>
+          </div>
 
-          <a href="" className="nav-link">
-            About
-          </a>
+          <ul id="nav-links">
+            <div id="close-menu">
+              <span class="material-symbols-outlined">
+                close
+              </span>
+            </div>
+              
+            <li className="nav-link">
+              <NavLink to="/" end>
+                Home
+              </NavLink>
+            </li>
 
-          <a href="" className="nav-link">
-            Collections
-          </a>
+            <li className="nav-link">
+              <NavLink to="/collections">Collections</NavLink>
+            </li>
 
-          <a href="" className="nav-link">
-            Customer Service
-          </a>
+            <li className="nav-link">
+              <NavLink to="/about">About</NavLink>
+            </li>
 
-          <a className="nav-link cart">
-            <img src={shoppingCart} alt="Shop Here" loading="active" />
-          </a>
+            <li className="nav-link">
+              <NavLink to="/contact">Contact</NavLink>
+            </li>
+
+            <li className="nav-link cart">
+              <NavLink to="/shop">
+                <span className="material-symbols-outlined">shopping_cart</span>
+              </NavLink>
+            </li>
+          </ul>
         </div>
       </div>
     </>

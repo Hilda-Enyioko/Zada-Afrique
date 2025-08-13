@@ -1,0 +1,90 @@
+/* Nav Bar */
+#nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 3rem;
+  background: 1px solid #e5e8eb;
+  box-shadow: 0 5px 15px rgb(0, 0, 0, 0.06);
+}
+
+#logo {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+#zada-logo {
+  padding-bottom: 0.2rem;
+}
+
+#zada-text {
+  display: flex;
+  align-items: center;
+}
+
+#navbar {
+  display: flex;
+  align-items: center;
+}
+
+#nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
+}
+
+.nav-link {
+  list-style: none;
+  position: relative;
+}
+
+.nav-link a {
+  text-decoration: none;
+  color: #121712;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 0.2rem;
+  transition: color 0.5s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+}
+
+.nav-link a:hover,
+.nav-link a.active {
+  color: #016d01;
+}
+
+.nav-link a::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  position: absolute;
+  background-color: #016d01;
+  bottom: -4px;
+  left: 5px;
+  transition: width 0.3s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+}
+
+.nav-link a.active::after,
+.nav-link a:hover::after {
+  width: 30%;
+}
+
+#hamburger-menu,
+#close-menu, 
+.cart {
+  padding-top: 0.5rem;
+}
+
+.cart a::after {
+  display: none;
+}
+
+@media screen and (max-width:768px) {
+  #navbar {
+
+  }
+}
