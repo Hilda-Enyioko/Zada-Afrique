@@ -5,8 +5,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 1.25rem 3rem;
-  background: 1px solid #e5e8eb;
   box-shadow: 0 5px 15px rgb(0, 0, 0, 0.06);
+  cursor: pointer;
 }
 
 #logo {
@@ -33,6 +33,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
   margin: 0;
   padding: 0;
   gap: 2rem;
@@ -74,17 +75,75 @@
 }
 
 #hamburger-menu,
-#close-menu, 
+#close-menu,
 .cart {
   padding-top: 0.5rem;
+}
+
+#hamburger-menu,
+#close-menu {
+  display: none;
 }
 
 .cart a::after {
   display: none;
 }
 
-@media screen and (max-width:768px) {
-  #navbar {
+@media screen and (max-width: 768px) {
+  #nav {
+    padding: 1rem 1.5rem;
+  }
 
+  #hamburger-menu,
+  #close-menu {
+    display: block;
+  }
+
+  #nav-links {
+    position: fixed;
+    right: -500px;
+    top: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: 100vh;
+    width: 90vw;
+    padding: 1.25rem 3rem;
+    transition: right 0.9s ease-in-out;
+    box-shadow: -8px 0 16px rgb(0, 0, 0, 0.08);
+  }
+
+  #nav-links.active {
+    right: 0;
+  }
+
+  .nav-link a {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .nav-link a::after {
+    bottom: -2px;
+  }
+
+  .nav-link a.hover::after,
+  .nav-link a.active::after {
+    width: 100%;
+  }
+
+  .nav-link a.active::after {
+    width: 100px;
+    height: 100px;
+    background: rgba(1, 109, 1, 0.3);
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 0.4s linear;
+  }
+
+  @keyframes ripple {
+    to {
+      transform: scale(4);
+      opacity: 0;
+    }
   }
 }
