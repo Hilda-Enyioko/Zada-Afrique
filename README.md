@@ -14,7 +14,7 @@
 
 | Area         | Technology                         |
 |--------------|------------------------------------|
-| **Frontend** | Next.js, React, Tailwind CSS       |
+| **Frontend** | Next.js, React                     |
 | **Backend**  | Node.js (via Next.js API routes)   |
 | **Database** | PostgreSQL                         |
 | **Email**    | Nodemailer (SMTP Integration)      |
