@@ -14,5 +14,48 @@
 
 .hero-overlay {
   position: absolute;
-  left: -200px;
+  background: none;
+  left: 100px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-10%, 150%);
+  transition: all 0.8s ease;
+}
+
+.hero-text {
+  background: none;
+  font-size: 3.5rem;
+  color: #d4af37;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+.hero-cta {
+  margin-top: 1.5rem;
+  padding: 0.5rem 2rem;
+  font-size: 1rem;
+  background: #000;
+  color: #fff;
+}
+
+.hero-ctn:hover {
+  background: #444;
+}
+
+.slide-in {
+  transform: translateY(-10%, -40%);
+}
+
+@media screen and (max-width: 768px) {
+  .hero-section {
+    height: 30vh;
+  }
+
+  .hero-overlay {
+    top: 50%;
+  }
 }

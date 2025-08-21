@@ -72,7 +72,7 @@ function Footer() {
 
           <div className="footer-socials">
             <a href="https://instagram.com/zadaafrique" target="_blank">
-              <i class="fa-brands fa-instagram"></i>
+              <i className="fa-brands fa-instagram"></i>
             </a>
 
             <a href="https://wa.me/2347036612812" target="_blank">
