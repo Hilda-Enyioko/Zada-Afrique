@@ -1,0 +1,19 @@
+.hero-section {
+    width: 100%;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+
+}
+
+.hero-image,
+.hero-image img {
+    width: 100%;
+}
+
+.hero-overlay {
+    position: absolute;
+    left: -200px;
+}

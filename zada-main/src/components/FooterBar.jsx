@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import zadaLogo from "../assets/zada-vector-logo.svg";
-import zadaText from "../assets/zada-full-vector-logo.svg";
+import zadaLogo from "../assets/logos/zada-vector-logo.svg";
+import zadaText from "../assets/logos/zada-full-vector-logo.svg";
 import "../styles/footer.css";
 
 function Footer() {
