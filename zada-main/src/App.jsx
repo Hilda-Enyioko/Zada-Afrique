@@ -7,6 +7,7 @@ import Collections from "./pages/Collections";
 import Contact from "./pages/Contact";
 import Shop from "./pages/Shop";
 import NotFound from "./pages/NotFound";
+import Footer from "./components/FooterBar";
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/shop" element={<Shop />} />
       </Routes>
+
+      <Footer />
     </Router>
   );
 }

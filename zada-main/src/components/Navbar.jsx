@@ -18,7 +18,7 @@ function Navbar() {
 
   return (
     <>
-      <div id="nav">
+      <nav id="nav">
         <div id="logo">
           <NavLink id="zada-logo" to="/" end>
             <img src={zadaLogo} alt="Zada_Logo" loading="active" />
@@ -111,7 +111,7 @@ function Navbar() {
             </li>
           </ul>
         </div>
-      </div>
+      </nav>
     </>
   );
 }
