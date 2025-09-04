@@ -6,11 +6,16 @@ import heroImage from "../assets/product-images/IMG-20250820-WA0065_2.jpg";
 import "../styles/home.css";
 
 function Home() {
-  const [isSlide, setIsSlide] = useState(false);
+  const [slideText, setSlideText] = useState(false);
+  const [slideCta, setSlideCta] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsSlide(true), 300);
-    return () => clearTimeout(timer);
+    const textTimer = setTimeout(() => setSlideText(true), 300);
+    const ctaTimer = setTimeout(() => setSlideCta(true), 800);
+    return () => {
+      clearTimeout(textTimer);
+      clearTimeout(ctaTimer);
+    };
   }, []);
 
   return (
@@ -20,11 +25,13 @@ function Home() {
           <img src={heroImage} loading="active" alt="Shop Zada Afrique" />
         </div>
 
-        <div className={`hero-overlay ${isSlide ? "slide-in" : "slide-in"}`}>
-          <h1 className="hero-text">
+        <div className="hero-overlay">
+          <h1 className={`hero-text ${slideText ? "hero-slide-in" : ""}`}>
             Timeless African <br /> Elegance
           </h1>
-          <button className="hero-cta">SHOP NOW</button>
+          <button className={`hero-cta ${slideCta ? "hero-slide-in" : ""}`}>
+            SHOP NOW
+          </button>
         </div>
       </section>
       <section className="top-picks"></section>
