@@ -29,6 +29,11 @@
   align-items: center;
 }
 
+#zada-text p {
+  font-family: "Bodoni Moda", serif;
+  color: #000;
+}
+
 #navbar {
   display: flex;
   align-items: center;
@@ -50,6 +55,7 @@
 }
 
 .nav-link a {
+  font-family: "Noto Serif", serif;
   text-decoration: none;
   color: #121712;
   font-size: 14px;
@@ -106,6 +112,7 @@
 
   #nav-links {
     position: fixed;
+    background-color: #fdfdfd;
     right: -500px;
     top: 0;
     flex-direction: column;
@@ -149,6 +156,24 @@
     to {
       transform: scale(4);
       opacity: 0;
+    }
+  }
+}
+
+
+@media (prefers-color-scheme: dark) {
+  #nav {
+    background: url("../assets/product-images/Hero-For-Zada-Black.png");
+  }
+
+  .nav-link a,
+  #zada-text p {
+    color: #fdfdfd;
+  }
+
+  @media screen and (max-width: 768px) {
+    #nav-links {
+      background-color: #0B1C0B;
     }
   }
 }

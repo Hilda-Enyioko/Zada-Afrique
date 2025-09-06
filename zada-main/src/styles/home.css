@@ -31,7 +31,10 @@
   letter-spacing: 0.15rem;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.85);
-   margin-bottom: 0.8rem;
+}
+
+.hero h4:first-child {
+  margin-bottom: 0.8rem;
 }
 
 .hero h1 {
@@ -65,9 +68,9 @@
   letter-spacing: 0.05rem;
   text-transform: uppercase;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease-in-out;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 
 .hero-cta:hover {
@@ -96,9 +99,18 @@
     align-items: center;
     text-align: center;
     padding: 0 1.5rem;
+    height: 92vh
   }
 
   .hero h1 {
     font-size: 2.5rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .hero {
+    background: url("../assets/product-images/Hero-For-Zada-Black.png");
+    background-size: cover;
+    background-position: top 25% right 0%;
   }
 }

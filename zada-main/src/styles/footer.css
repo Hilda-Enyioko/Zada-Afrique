@@ -42,6 +42,11 @@ footer {
   padding-bottom: 0.25rem;
 }
 
+#logo-text p {
+  font-family: "Bodoni Moda", serif;
+  color: #000;
+}
+
 .footer-nav {
   list-style: none;
 }
@@ -104,5 +109,34 @@ footer {
 
   .footer-socials {
     padding-top: 1.5rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  footer {
+    background-color: #010101;
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.5);
+  }
+
+  .footer-container {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .footer-nav a,
+  .footer-socials a {
+    color: #bbb;
+  }
+
+  .footer-socials a:hover,
+  .footer-nav a:hover {
+    color: #fff;
+  }
+
+  .footer-bottom {
+    color: #aaa;
+  }
+
+  #logo-text p {
+    color: #fdfdfd;
   }
 }

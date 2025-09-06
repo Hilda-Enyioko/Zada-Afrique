@@ -1,19 +1,18 @@
-import { useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+// import { useState } from "react";
+import { NavLink, useNavigate} from "react-router-dom";
 import zadaLogo from "../assets/logos/zada-vector-logo.svg";
-import zadaText from "../assets/logos/zada-full-vector-logo.svg";
+// import zadaText from "../assets/logos/zada-full-vector-logo.svg";
 import "../styles/footer.css";
 
 function Footer() {
-  const handleSubmit = (e) => {
-    e, preventDefault();
-    const email = e.target.email.value;
-    const subject = "Quote Request";
-    const body = `Hello, \nI would like a quote for a custom outfit from Zada Afrique. \nMy email is: ${email}. \nMy measurements are:...`;
 
-    window.location.href = `mailto:info@zadaafrique.com?subject=${encodeURIComponent(
-      subject
-    )}&body=${encodeURIComponent(body)}`;
+  // Handle Page Reload when Nav Link is active
+  const navigate = useNavigate();
+  
+  const handleClick = (path) => {
+    navigate(path);
+  
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -27,7 +26,7 @@ function Footer() {
               </NavLink>
 
               <NavLink id="logo-text" to="/" end>
-                <img src={zadaText} alt="Zada Afrique" loading="active" />
+                <p>Zada Afrique</p>
               </NavLink>
             </div>
 
@@ -36,7 +35,6 @@ function Footer() {
                 <NavLink
                   to="/collections"
                   onClick={() => {
-                    setIsOpen(false);
                     handleClick("/collections");
                   }}
                 >
@@ -48,7 +46,6 @@ function Footer() {
                 <NavLink
                   to="/about"
                   onClick={() => {
-                    setIsOpen(false);
                     handleClick("/about");
                   }}
                 >
@@ -60,7 +57,6 @@ function Footer() {
                 <NavLink
                   to="/contact"
                   onClick={() => {
-                    setIsOpen(false);
                     handleClick("/contact");
                   }}
                 >
