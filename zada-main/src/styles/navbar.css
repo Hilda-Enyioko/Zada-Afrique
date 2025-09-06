@@ -1,15 +1,17 @@
 /* Nav Bar */
 #nav {
+  background: #fdfdfd;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.25rem 3rem;
+  padding: 1rem 3rem;
   box-shadow: 0 5px 15px rgb(0, 0, 0, 0.06);
   cursor: pointer;
   position: sticky;
   top: 0;
-  z-index: 1000;
+  left: 0;
+  z-index: 999;
 }
 
 #logo {

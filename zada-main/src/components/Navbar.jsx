@@ -17,86 +17,85 @@ function Navbar() {
   };
 
   return (
-    <>
-      <nav id="nav">
-        <div id="logo">
-          <NavLink id="zada-logo" to="/" end>
-            <img src={zadaLogo} alt="Zada_Logo" loading="active" />
-          </NavLink>
+    <nav id="nav">
+      <div id="logo">
+        <NavLink id="zada-logo" to="/" end>
+          <img src={zadaLogo} alt="Zada_Logo" loading="active" />
+        </NavLink>
 
-          <NavLink id="zada-text" to="/" end>
-            <img src={zadaText} alt="Zada Afrique" loading="active" />
-          </NavLink>
+        <NavLink id="zada-text" to="/" end>
+          <img src={zadaText} alt="Zada Afrique" loading="active" />
+        </NavLink>
+      </div>
+
+      <div id="navbar">
+        <div
+          id="hamburger-menu"
+          onClick={() => {
+            setIsOpen(true);
+          }}
+        >
+          <span className="material-symbols-outlined">dehaze</span>
         </div>
 
-        <div id="navbar">
+        <ul id="nav-links" className={`${isOpen ? "active" : ""}`}>
           <div
-            id="hamburger-menu"
+            id="close-menu"
             onClick={() => {
-              setIsOpen(true);
+                setIsOpen(false);
             }}
           >
-            <span className="material-symbols-outlined">dehaze</span>
+            <span className="material-symbols-outlined">close</span>
           </div>
 
-          <ul id="nav-links" className={`${isOpen ? "active" : ""}`}>
-            <div
-              id="close-menu"
+          <li className="nav-link">
+            <NavLink
+              to="/"
+              end
               onClick={() => {
                 setIsOpen(false);
+                handleClick("/");
               }}
             >
-              <span className="material-symbols-outlined">close</span>
-            </div>
+              Home
+            </NavLink>
+          </li>
 
-            <li className="nav-link">
-              <NavLink
-                to="/"
-                end
-                onClick={() => {
-                  setIsOpen(false);
-                  handleClick("/");
-                }}
-              >
-                Home
-              </NavLink>
-            </li>
+          <li className="nav-link">
+            <NavLink
+              to="/collections"
+              onClick={() => {
+                setIsOpen(false);
+                handleClick("/collections");
+              }}
+            >
+              Collections
+            </NavLink>
+          </li>
 
-            <li className="nav-link">
-              <NavLink
-                to="/collections"
-                onClick={() => {
-                  setIsOpen(false);
-                  handleClick("/collections");
-                }}
-              >
-                Collections
-              </NavLink>
-            </li>
+          <li className="nav-link">
+            <NavLink
+              to="/about"
+              onClick={() => {
+                setIsOpen(false);
+                handleClick("/about");
+              }}
+            >
+              About
+            </NavLink>
+          </li>
 
-            <li className="nav-link">
-              <NavLink
-                to="/about"
-                onClick={() => {
-                  setIsOpen(false);
-                  handleClick("/about");
-                }}
-              >
-                About
-              </NavLink>
-            </li>
-
-            <li className="nav-link">
-              <NavLink
-                to="/contact"
-                onClick={() => {
-                  setIsOpen(false);
-                  handleClick("/contact");
-                }}
-              >
-                Contact
-              </NavLink>
-            </li>
+          <li className="nav-link">
+            <NavLink
+              to="/contact"
+              onClick={() => {
+                setIsOpen(false);
+                handleClick("/contact");
+              }}
+            >
+              Contact
+            </NavLink>
+          </li>
 
             <li className="nav-link cart">
               <NavLink
@@ -112,7 +111,6 @@ function Navbar() {
           </ul>
         </div>
       </nav>
-    </>
   );
 }
 
