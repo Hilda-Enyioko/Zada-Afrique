@@ -1,3 +1,4 @@
+/* Hero Section */
 .hero {
   position: relative;
   background-image: url("../assets/product-images/Hero-For-Zada-Green.png");
@@ -57,7 +58,7 @@
 }
 
 .hero-cta {
-  background: #e5c07b; /* muted gold for luxury */
+  background: #e5c07b;
   color: #111;
   border: none;
   padding: 0.9rem 2.5rem;

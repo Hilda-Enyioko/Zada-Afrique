@@ -1,11 +1,9 @@
 // import { useState } from "react";
 import { NavLink, useNavigate} from "react-router-dom";
 import zadaLogo from "../assets/logos/zada-vector-logo.svg";
-// import zadaText from "../assets/logos/zada-full-vector-logo.svg";
 import "../styles/footer.css";
 
 function Footer() {
-
   // Handle Page Reload when Nav Link is active
   const navigate = useNavigate();
   
@@ -21,11 +19,24 @@ function Footer() {
         <div className="footer-container">
           <div className="footer-links">
             <div className="footer-logo">
-              <NavLink id="small-logo" to="/" end>
+              <NavLink 
+                id="small-logo" 
+                to="/" 
+                end
+                onClick={() => {
+                    handleClick("/");
+                }}
+              >
                 <img src={zadaLogo} alt="Zada_Logo" loading="active" />
               </NavLink>
 
-              <NavLink id="logo-text" to="/" end>
+              <NavLink id="logo-text" 
+                to="/" 
+                end
+                onClick={() => {
+                  handleClick("/");
+                }}
+              >
                 <p>Zada Afrique</p>
               </NavLink>
             </div>
