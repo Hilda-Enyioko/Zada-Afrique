@@ -20,9 +20,18 @@ const topPicks = [
   { img: zariaSuspender, caption: "Zaria Suspender" },
 ];
 
+const reviews = [
+  { content: "Honestly, I was nervous about ordering online but @ZadaAfrique delivered 100%! Perfect size, perfect style. I'm impressed🥰", name: "Ayomide" },
+  { content: "From packaging to fitting, everything was 10/10💯 Thank you @ZadaAfrique, you just got yourrself a loyal customer", name: "Toyin" },
+  { content: "The finishing is so neat and classy👌I wore my outfit today and the compiments did not stop rolling in😍🔥@ZadaAfrique you did that", name: "Ella" },
+  { content: "", name: "" },
+  { content: "", name: "" }
+];
+
 function Home() {
   const navigate = useNavigate();
   const [currentPickIndex, setCurrentPickIndex] = useState(0);
+  const [currentReviewIndex, setCurrentReviewIndex] = useState(0)
   const [itemsPerPage, setItemsPerPage] = useState(3);
 
   // navigate + scroll
@@ -133,6 +142,40 @@ function Home() {
             </button>
           )}
         </div>
+      </section>
+
+      {/* Customers' Reviews */}
+      <section className="reviews relative flex flex-col items-center justify-center h-[88vh] overflow-hidden">
+          <h2 className="section-header text-center font-bold mb-12 tracking-wide">
+            What Our Customers' Have To Say
+          </h2>
+
+          <div className="reviews-track overflow-hidden 
+                          w-3/4 flex transition-transform 
+                          duration-500 ease-in-out"
+               style={{
+                        transform: `translateX(-${
+                        (100 / itemsPerPage) * currentReviewIndex
+                        }%)`,
+                      }}
+          >
+            {reviews.map((review, index) => (
+              <div
+                key={index}
+                className="review-container flex-shrink-0 backdrop-blur-md
+                           rounded-2xl shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all"
+                style={{ width: `calc(${100 / itemsPerPage}% - 1rem)` }}
+              >
+                <div className="overflow-hidden rounded-t-2xl relative">
+                  <p>{ review.content }</p>
+                  <div className="slide-overlay"></div>
+                </div>
+                <div className="customer-name mt-3 text-center">
+                  <p>{review.name}</p>
+                </div>
+              </div>
+            ))}
+          </div>
       </section>
     </>
   );

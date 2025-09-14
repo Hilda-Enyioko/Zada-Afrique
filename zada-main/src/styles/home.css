@@ -177,6 +177,7 @@
 @media (max-width: 1024px) {
   .top-picks {
     margin: 0 2rem;
+    height: 45vh;
   }
 }
 
@@ -200,6 +201,10 @@
   .slide-right {
     top: 90%;
     transform: translateY(-50%);
+  }
+
+  .top-picks {
+    height: 65vh;
   }
 }
 
