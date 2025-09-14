@@ -2,7 +2,6 @@ import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import "../styles/navbar.css";
 import zadaLogo from "../assets/logos/zada-vector-logo.svg";
-// import zadaText from "../assets/logos/zada-full-vector-logo.svg";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
