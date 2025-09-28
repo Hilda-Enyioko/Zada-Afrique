@@ -1,6 +1,7 @@
 /* HERO */
 .hero {
   background-image: url("../assets/product-images/Hero-For-Zada-Green.png");
+  height: 90vh;
   background-position: top 25% right 0%;
   padding: 0 3rem;
   background-size: cover;
@@ -121,7 +122,7 @@
   transition: all 0.4s ease;
 }
 
-/* SLIDE BUTTONS */
+/* TOP PICKS SLIDE BUTTONS */
 .slide-left,
 .slide-right {
   display: flex;
@@ -160,7 +161,7 @@
   padding: 0.75rem 1.25rem;
 }
 
-/* OVERLAY EFFECT */
+/* OVERLAY EFFECT FOR TOP PICKS */
 .slide-overlay {
   -webkit-backdrop-filter: blur(2px);
   backdrop-filter: blur(2px);
@@ -168,9 +169,41 @@
   opacity: 0;
 }
 
-.top-pick-container:hover .slide-overlay {
+.top-pick-container:hover .slide-overlay,
+.review-card:hover .slide-overlay {
   background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(8, 97, 8, 0.3));
   opacity: 0.25;
+}
+
+/* REVIEWS */
+.reviews {
+  padding-top: 2.5rem;
+  margin: 0 8rem;
+}
+
+.review-card {
+  background: rgba(255, 255, 255, 0.8);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  transition: all 0.4s ease;
+  padding: 2rem 1.5rem;
+  margin: 0 0.5rem;
+}
+
+.review-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.review-text {
+  font-family: serif;
+  color: #333;
+}
+
+.review-name {
+  font-family: "Bodoni Moda", serif;
+  font-size: 1rem;
+  color: #016d01;
 }
 
 /* RESPONSIVE */
@@ -199,12 +232,20 @@
 
   .slide-left,
   .slide-right {
-    top: 90%;
-    transform: translateY(-50%);
+    display: none;
   }
 
   .top-picks {
     height: 65vh;
+  }
+
+    .reviews {
+    margin: 0 1.5rem;
+    height: 65vh;
+  }
+
+  .review-text {
+    font-size: 1rem;
   }
 }
 
@@ -230,5 +271,31 @@
   .slide-right:hover {
     background: #e5c07b;
     color: #111;
+  }
+
+  .review-card {
+    background: rgba(30, 30, 30, 0.6);
+    color: #f5f5f5;
+    border: 1px solid rgba(229, 192, 123, 0.3);
+  }
+
+  .review-text {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .review-name {
+    color: #e5c07b;
+  }
+
+  .review-overlay {
+    background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.7),
+      rgba(229, 192, 123, 0.2)
+    );
+  }
+
+  .reviews .section-header {
+    color: #e5c07b;
   }
 }

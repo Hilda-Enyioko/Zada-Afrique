@@ -1,7 +1,8 @@
 {
   "dependencies": {
     "firebase": "^12.1.0",
-    "lucide-react": "^0.544.0"
+    "lucide-react": "^0.544.0",
+    "motion": "^12.23.22"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.13",
