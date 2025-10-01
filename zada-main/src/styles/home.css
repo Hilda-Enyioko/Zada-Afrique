@@ -1,7 +1,6 @@
 /* HERO */
 .hero {
   background-image: url("../assets/product-images/Hero-For-Zada-Green.png");
-  height: 90vh;
   background-position: top 25% right 0%;
   padding: 0 3rem;
   background-size: cover;
@@ -92,14 +91,17 @@
 }
 
 /* TOP PICKS */
-.top-picks {
+.top-picks,
+.reviews,
+.customer-interaction {
   padding-top: 2.5rem;
-  margin: 0 8rem;
+  margin: 5rem 8rem 0;
 }
 
 .section-header {
   font-size: 2.5rem;
   color: #448044;
+  text-shadow: 1px 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .slide-container {
@@ -176,11 +178,6 @@
 }
 
 /* REVIEWS */
-.reviews {
-  padding-top: 2.5rem;
-  margin: 0 8rem;
-}
-
 .review-card {
   background: rgba(255, 255, 255, 0.8);
   -webkit-backdrop-filter: blur(8px);
@@ -195,7 +192,8 @@
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
-.review-text {
+.review-text,
+.interaction-text {
   font-family: serif;
   color: #333;
 }
@@ -206,6 +204,95 @@
   color: #016d01;
 }
 
+/* CUSTOMER INTERACTION */
+.customer-interaction {
+  position: relative;
+  padding: 4rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.customer-interaction p {
+  margin-top: 0.75rem;
+  font-size: 1rem;
+  text-align: center;
+  color: #555;
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "Bodoni Moda", serif;
+}
+
+.customer-interaction form {
+  position: relative;
+  width: 100%;
+  max-width: 42rem;
+  margin-top: 3rem;
+  background: rgba(255, 255, 255, 0.8);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(1, 109, 1, 0.2);
+  border-radius: 1rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  padding: 2rem;
+  gap: 1rem;
+}
+
+.customer-form label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-family: "Bodoni Moda", serif;
+}
+
+.customer-form input,
+.customer-form select,
+.customer-form textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid #ccc;
+  border-radius: 0.75rem;
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.3s ease;
+  background: #fff;
+  font-family: "Bodoni Moda", serif;
+}
+
+.customer-form input:focus,
+.customer-form select:focus,
+.customer-form textarea:focus {
+  border-color: #016d01;
+  box-shadow: 0 0 0 3px rgba(1, 109, 1, 0.2);
+}
+
+.customer-form button {
+  width: 100%;
+  padding: 0.9rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  background: #e5c07b;
+  color: #111;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.customer-form button:hover {
+  background: #111;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+  color: #e5c07b
+}
+
+
 /* RESPONSIVE */
 @media (max-width: 1024px) {
   .top-picks {
@@ -215,6 +302,16 @@
 }
 
 @media (max-width: 768px) {
+  .section-header {
+    font-size: 1.5rem;
+  }
+
+  .top-picks,
+  .reviews,
+  .customer-interaction {
+    margin: 3rem 2rem 0;
+  }
+
   .hero {
     align-items: center;
     text-align: center;
@@ -297,5 +394,48 @@
 
   .reviews .section-header {
     color: #e5c07b;
+  }
+
+  .customer-interaction h2 {
+    color: #e5c07b;
+  }
+
+  .customer-interaction p,
+  .interaction-text {
+    color: #ddd;
+  }
+
+  .customer-form {
+    background: rgba(30, 30, 30, 0.85);
+    border: 1px solid rgba(229, 192, 123, 0.3);
+  }
+
+  .customer-form label {
+    color: #ddd;
+  }
+
+  .customer-form input,
+  .customer-form select,
+  .customer-form textarea {
+    background: #222;
+    border: 1px solid #444;
+    color: #eee;
+  }
+
+  .customer-form input:focus,
+  .customer-form select:focus,
+  .customer-form textarea:focus {
+    border-color: #e5c07b;
+    box-shadow: 0 0 0 3px rgba(229, 192, 123, 0.25);
+  }
+
+  .customer-form button {
+    background: #e5c07b;
+    color: #111;
+  }
+
+  .customer-form button:hover {
+    background: #d4aa5c;
+    color: #111;
   }
 }

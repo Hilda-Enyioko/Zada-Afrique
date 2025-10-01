@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 :root {
   font-family: "Noto Serif", serif;
@@ -33,6 +31,13 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  inset: 0;
+  background: linear-gradient(
+    to bottom right,
+    rgba(1, 109, 1, 0.1),
+    transparent,
+    rgba(1, 109, 1, 0.05)
+  );
 }
 
 .material-symbols-outlined {

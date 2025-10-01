@@ -1,7 +1,16 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { saveCustomerInteraction } from "../services/firebaseService";
+import emailjs from "@emailjs/browser";
 import "../styles/home.css";
+
+// SECURE KEYS
+const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const interactionTemplateId = import.meta.env.VITE_EMAILJS_INTERACTION_TEMPLATE_ID;
+const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+const contactPhone = import.meta.env.VITE_CONTACT_PHONE;
+
 
 // Image imports
 import zaharaEnsemble from "../assets/product-images/two-piece1.jpg";
@@ -28,14 +37,31 @@ const reviews = [
   { content: "What stood out for me was the attention to detail. From the stitching to the fit, everything screams premium. You’ve earned a repeat buyer!", name: "Tolu" }
 ];
 
-const statesInNigeria = [
-  "Abia", "Adamawa", "Akwa Ibom", "Anambra", "Bauchi", "Bayelsa", "Benue",
-  "Borno", "Cross River", "Delta", "Ebonyi", "Edo", "Ekiti", "Enugu",
-  "FCT - Abuja", "Gombe", "Imo", "Jigawa", "Kaduna", "Kano", "Katsina",
-  "Kebbi", "Kogi", "Kwara", "Lagos", "Nasarawa", "Niger", "Ogun", "Ondo",
-  "Osun", "Oyo", "Plateau", "Rivers", "Sokoto", "Taraba", "Yobe", "Zamfara",
-  "Abroad"
-];
+  // States in Nigeria for the location dropdown under customer interaction form
+  function useNigerianStates() {
+    const [states, setStates] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+      const fetchStates = async () => {
+        try {
+          const response = await fetch("https://nga-states-lga.onrender.com/fetch");
+          const data = await response.json();
+          const nigeriaStates = data;
+          setStates(nigeriaStates);
+          setLoading(false);
+        }
+        catch (error) {
+          console.error("Error fetching states:", error);
+          setLoading(false);
+        }
+      };
+
+      fetchStates();
+    }, []);
+
+    return { states, loading };
+  }
 
 function Home() {
   const navigate = useNavigate();
@@ -104,6 +130,9 @@ function Home() {
     return () => clearInterval(reviewInterval);
   }, [itemsPerPage]);
 
+  // Nigerian states for the location dropdown
+  const { states: statesInNigeria, loading: statesLoading } = useNigerianStates();
+
   // Handling the interaction form
   const [formData, setFormData] = useState({
     name: "",
@@ -120,16 +149,39 @@ function Home() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
 
-    const whatsappNumber = "2347036612812";
-    const message = `Hello, my name is ${formData.name}.\nI am from ${formData.location}.\nI would like to ${formData.purpose}. Here are the details: ${formData.details}`;
-    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    try {
+      //1. Console log to verify form data before any external actions
+      console.log("Submitting form data:", formData);
 
-    window.open(whatsappURL, "_blank");
-  };
+      //2. Send Message via WhatsApp
+      const whatsappNumber = contactPhone;
+      const message = `Hello, my name is ${formData.name}.\nI am from ${formData.location}.\nI would like to ${formData.purpose}. Here are the details: ${formData.details}`;
+      const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+      window.open(whatsappURL, "_blank");
+
+      //3. Send Mail Notification
+      await emailjs.send(
+      serviceId,
+      interactionTemplateId,
+      formData,
+      publicKey
+    );
+      console.log("Email sent successfully!");
+
+      //4. Save to Firestore
+      await saveCustomerInteraction(formData);
+      console.log("Customer interaction saved!");
+      alert("Thank you for reaching out! We'll get back to you soon.");
+  } catch (error) {
+    console.error("Error sending email:", error);
+    alert("There was an error submitting the form. Please try again later.");
+    throw error;
+  }
+};
 
   return (
     <>
@@ -214,50 +266,52 @@ function Home() {
       </section>
 
       {/* Customers' Reviews */}
-      <section className="reviews relative flex flex-col items-center justify-center h-[88vh] overflow-hidden">
+      <section className="reviews relative flex flex-col items-center justify-center overflow-hidden">
         <h2 className="section-header text-center font-bold mb-12 tracking-wide">
           What Our Customers Have To Say
         </h2>
 
-        <div
-          className="reviews-track flex transition-transform duration-700 ease-in-out w-3/4"
-          style={{
-            transform: `translateX(-${(100 / itemsPerPage) * currentReviewIndex}%)`,
-          }}
-        >
-          {reviews.map((review, index) => (
-            <div
-              key={index}
-              className="review-card flex-shrink-0 rounded-2xl backdrop-blur-md shadow-lg 
-                         flex flex-col justify-between"
-              style={{ width: `calc(${100 / itemsPerPage}% - 1rem)` }}
-            >
-              <div className="slide-overlay absolute inset-0"></div>
-              <p className="review-text italic text-lg leading-relaxed text-gray-800">
-                “{review.content}”
-              </p>
-              <p className="review-name mt-6 font-semibold text-green-700 text-right">
-                - {review.name}
-              </p>
-            </div>
-          ))}
+        <div className="slide-container overflow-hidden w-3/4">
+          <div
+            className="reviews-track flex transition-transform duration-700 ease-in-out w-3/4"
+            style={{
+              transform: `translateX(-${(100 / itemsPerPage) * currentReviewIndex}%)`,
+            }}
+          >
+            {reviews.map((review, index) => (
+              <div
+                key={index}
+                className="review-card flex-shrink-0 rounded-2xl backdrop-blur-md shadow-lg 
+                           flex flex-col justify-between"
+                style={{ width: `calc(${100 / itemsPerPage}% - 1rem)` }}
+              >
+                <div className="slide-overlay absolute inset-0"></div>
+                <p className="review-text italic text-lg leading-relaxed text-gray-800">
+                  “{review.content}”
+                </p>
+                <p className="review-name mt-6 font-semibold text-green-700 text-right">
+                  - {review.name}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Customer Interaction Section */}
-      <section className="customer-interaction relative flex flex-col items-center justify-center h-[88vh] overflow-hidden">
+      <section className="customer-interaction relative flex flex-col items-center justify-center overflow-hidden">
         <h2 className="section-header text-center font-bold mb-12 tracking-wide">
           Get In Touch
         </h2>
 
         <div className="interaction-container flex flex-col items-center">
-          <p className="interaction-text text-lg leading-relaxed text-gray-800 mb-6">
+          <p className="interaction-text text-lg leading-relaxed text-gray-800 mb-6 italic">
             Questions, orders, or ideas? We’re just a message away.
           </p>
           
           <form
             onSubmit={handleSubmit} 
-            className="w-3/4 md:w-1/2 bg-white dark:bg-[#1a1a1a] shadow-lg rounded-2xl p-8 flex flex-col gap-4"
+            className="customer-form w-1 bg-white dark:bg-[#1a1a1a] shadow-lg rounded-2xl flex flex-col"
           >
             {/* Name */}
             <input
@@ -279,10 +333,10 @@ function Home() {
               className="p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#016d01]"
             >
               <option value="">Select your location</option>
-
-              {statesInNigeria.map((state, index) => (
+              { !statesLoading && statesInNigeria.map((state, index) => (
                 <option key={index} value={state}>{state}</option>
-              ))}
+              )) }
+              <option value="Foreign">Foreign</option>
             </select>
 
             {/* Purpose */}
