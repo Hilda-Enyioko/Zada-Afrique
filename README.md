@@ -46,6 +46,7 @@ cd zada-afrique/zada-main/vite
 
 # Install dependencies
 npm install
+```
 
 ---
 
