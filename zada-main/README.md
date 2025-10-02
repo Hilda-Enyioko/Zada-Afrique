@@ -1,12 +1,44 @@
-# React + Vite
+# Zada Afrique – Vite Project Setup
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This folder contains the **Vite-powered React application** for the Zada Afrique project.  
+It serves as the **frontend** of the platform, providing a fast, modern, and optimized development environment.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📂 Folder Purpose
 
-## Expanding the ESLint configuration
+The `vite/` directory holds the codebase for the Zada Afrique web application.  
+While the main repository documents the entire project, this README focuses specifically on:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- ⚡ **Vite configuration** (project build and dev setup)  
+- 🖼 **React components and pages**  
+- 🎨 **Styling with TailwindCSS**  
+- 🔥 **Firebase integration** for backend services (Firestore, Authentication, Hosting)  
+- 📩 **EmailJS integration** for customer interaction handling  
+
+---
+
+## 🚀 Why Vite?
+
+Vite is used as the build tool because it provides:
+
+- **Instant server startup** – lightning-fast hot reloads.  
+- **Optimized builds** – pre-bundled with Rollup.  
+- **Simple configuration** – minimal boilerplate compared to Create React App.  
+- **Great DX** – modern JS and TypeScript support out of the box.  
+
+---
+
+## 🛠 Tech Stack Inside This Folder
+
+- **Languages & Frameworks**  
+  - React (UI framework)  
+  - TailwindCSS (styling)  
+  - Firebase (backend: Firestore, Hosting, Auth)  
+  - EmailJS (email notifications)  
+
+- **Build Tool**  
+  - Vite  
+
+---
+
