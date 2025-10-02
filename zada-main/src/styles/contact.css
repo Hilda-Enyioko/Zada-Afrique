@@ -213,7 +213,7 @@
 }
 
 /* Responsive */
-@media (max-width: 900px) {
+@media (max-width: 768px) {
   .contact-wrapper {
     flex-direction: column;
   }
@@ -230,4 +230,7 @@
     flex-direction: column;
     gap: 2rem;
   }
+
+  .contact-image {
+    display: none;
 }
