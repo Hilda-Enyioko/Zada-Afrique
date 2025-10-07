@@ -12,7 +12,7 @@ Follow the brand on Instagram 👉 [@zadaafrique](https://instagram.com/zadaafri
 ---
 
 ## 🚀 Live Demo  
-[🔗 Coming soon — Deployment on Vercel](#)  
+[https://zada-afrique.vercel.app/](https://zada-afrique.vercel.app/)  
 
 ---
 
