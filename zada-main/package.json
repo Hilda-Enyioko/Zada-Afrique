@@ -16,6 +16,7 @@
     "@fortawesome/free-solid-svg-icons": "^7.0.0",
     "firebase": "^12.3.0",
     "lucide-react": "^0.544.0",
+    "motion": "^12.23.22",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-hook-form": "^7.63.0",

@@ -336,7 +336,7 @@
     height: 65vh;
   }
 
-    .reviews {
+  .reviews {
     margin: 0 1.5rem;
     height: 65vh;
   }
@@ -354,7 +354,8 @@
     background-position: top 25% right 0%;
   }
 
-  .section-header {
+  .section-header,
+  .caption-text {
     color: #e5c07b;
   }
 

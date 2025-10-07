@@ -1,3 +1,5 @@
+import ComingSoon from "../components/ComingSoon";
+
 export default function Collections() {
-  return <h1>Collection Page</h1>;
+  return <ComingSoon />;
 }

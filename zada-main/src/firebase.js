@@ -6,12 +6,12 @@ import { getFirestore } from "firebase/firestore";
  
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBdl4VekJZ6izHyqdHwRcUUBDGwcxw2Kgg",
-  authDomain: "zada-afrique.firebaseapp.com",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
   projectId: "zada-afrique",
-  storageBucket: "zada-afrique.firebasestorage.app",
-  messagingSenderId: "1006474215618",
-  appId: "1:1006474215618:web:9608b364bc52dd32213b5b"
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID
 };
  
 // Initialize Firebase

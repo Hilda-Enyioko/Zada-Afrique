@@ -1,3 +1,5 @@
+import ComingSoon from "../components/ComingSoon";
+
 export default function Shop() {
-  return <h1>Shop Page</h1>;
+  return <ComingSoon />;
 }
