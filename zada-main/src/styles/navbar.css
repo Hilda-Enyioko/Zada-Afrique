@@ -177,7 +177,7 @@
   }
 
   .nav-link a::after {
-    background-color: #ec507b;
+    background-color: #e5c07b;
   }
 
   @media screen and (max-width: 768px) {
