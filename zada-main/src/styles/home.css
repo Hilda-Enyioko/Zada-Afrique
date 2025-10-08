@@ -1,6 +1,6 @@
 /* HERO */
 .hero {
-  background-image: url("../assets/product-images/Hero-For-Zada-Green.png");
+  background-image: url("/product-images/hero-light.png");
   background-position: top 25% right 0%;
   padding: 0 3rem;
   background-size: cover;
@@ -349,7 +349,7 @@
 /* DARK MODE */
 @media (prefers-color-scheme: dark) {
   .hero {
-    background: url("../assets/product-images/Hero-For-Zada-Black.png") no-repeat;
+    background: url("/product-images/hero-dark.png") no-repeat;
     background-size: cover;
     background-position: top 25% right 0%;
   }
