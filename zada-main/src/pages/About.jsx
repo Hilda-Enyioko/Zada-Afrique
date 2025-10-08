@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/about.css";
-import aboutImage from "../assets/product-images/zada-founder-pose2.jpg";
+import aboutImage from "/product-images/zada-founder-pose2.jpg";
 
 function About() {
   return (
