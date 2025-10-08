@@ -17,7 +17,7 @@ We take security seriously and appreciate your help in keeping **Zada Afrique** 
 
 If you discover a vulnerability or potential security issue, please **do not** open a public issue. Instead, report it directly via:
 
-📧 **Email:** zadaafrique@gmail.com  
+📧 **Email:** zadaafrique@gmail.com  / enyiokohilda@gmail.comcom 
 🔒 **Preferred Subject Line:** `[Security Report] - Vulnerability in Zada Afrique`
 
 Please include:
