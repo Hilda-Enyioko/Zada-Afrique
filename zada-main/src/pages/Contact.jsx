@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../styles/contact.css";
-import contactImage from "../assets/product-images/two-piece1.jpg";
+import contactImage from "/product-images/two-piece1.jpg";
 import { saveContactRecord } from "../services/firebaseService";
 import emailjs from "@emailjs/browser";
 
