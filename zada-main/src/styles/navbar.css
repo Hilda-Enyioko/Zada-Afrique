@@ -171,6 +171,15 @@
     color: #fdfdfd;
   }
 
+  .nav-link a:hover,
+  .nav-link a.active {
+    color: #e5c07b;
+  }
+
+  .nav-link a::after {
+    background-color: #ec507b;
+  }
+
   @media screen and (max-width: 768px) {
     #nav-links {
       background-color: #0B1C0B;
