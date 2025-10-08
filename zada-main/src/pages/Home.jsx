@@ -13,12 +13,12 @@ const contactPhone = import.meta.env.VITE_CONTACT_PHONE;
 
 
 // Image imports
-import zaharaEnsemble from "../assets/product-images/two-piece1.jpg";
-import oceaneEnsemble from "../assets/product-images/two-piece2-far.jpg";
-import amberMirage from "../assets/product-images/bubu-single.jpg";
-import zayaSet from "../assets/product-images/zada-founder2.jpg";
-import nyotaEnsemble from "../assets/product-images/hero-image.jpg";
-import zariaSuspender from "../assets/product-images/zada-founder1.jpg";
+import zaharaEnsemble from "/product-images/two-piece1.jpg";
+import oceaneEnsemble from "/product-images/two-piece2-far.jpg";
+import amberMirage from "/product-images/bubu-single.jpg";
+import zayaSet from "/product-images/zada-founder2.jpg";
+import nyotaEnsemble from "/product-images/hero-image.jpg";
+import zariaSuspender from "/product-images/zada-founder1.jpg";
 
 const topPicks = [
   { img: zaharaEnsemble, caption: "Zahara Ensemble" },
