@@ -24,7 +24,7 @@ Follow the brand on Instagram 👉 [@zadaafrique](https://instagram.com/zadaafri
 | **Styling**      | TailwindCSS + Custom CSS            | Clean, responsive, Afrocentric-inspired design |
 | **Backend**      | Node.js (Express)                  | Handles form submissions, backend logic, and API setup |
 | **Database**     | PostgreSQL + Firebase Firestore     | Structured and flexible storage for products, contact, and interactions |
-| **Email**        | EmailJS (frontend) + Nodemailer (backend) | Automated alerts for **contact forms** and **customer interactions** |
+| **Email**        | EmailJS (frontend)                 | Automated alerts for **contact forms** and **customer interactions** |
 | **Messaging**    | WhatsApp API Integration            | Direct ordering and inquiries |
 | **Hosting**      | Vercel                             | Global CDN, fast builds, and simple deployments |
 | **Versioning**   | Git + GitHub                        | Source control and collaboration |
