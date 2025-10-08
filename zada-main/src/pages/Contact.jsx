@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "../styles/contact.css";
-import contactImage from "/product-images/two-piece1.jpg";
 import { saveContactRecord } from "../services/firebaseService";
 import emailjs from "@emailjs/browser";
 
@@ -47,7 +46,7 @@ function Contact() {
     <section className="contact-wrapper">
       {/* Left Image */}
       <div className="contact-image">
-        <img src={contactImage} alt="Zada Afrique Fashion" />
+        <img src="/product-images/two-piece1.jpg" alt="Zada Afrique Fashion" />
       </div>
 
       {/* Right Form */}
