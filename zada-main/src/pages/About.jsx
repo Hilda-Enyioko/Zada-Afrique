@@ -1,13 +1,12 @@
 import React from "react";
 import "../styles/about.css";
-import aboutImage from "/product-images/zada-founder-pose2.jpg";
 
 function About() {
   return (
     <section className="about-wrapper">
       {/* Left Image */}
       <div className="about-image">
-        <img src={aboutImage} alt="Zada Afrique Fashion" />
+        <img src="/product-images/zada-founder-pose2.jpg" alt="Zada Afrique Fashion" />
       </div>
 
       {/* Right Content */}
