@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { saveCustomerInteraction } from "../services/firebaseService";
-import emailjs from "@emailjs/browser";
+// import emailjs from "@emailjs/browser";
 import "../styles/home.css";
 
 // SECURE KEYS
@@ -164,13 +164,14 @@ function Home() {
       window.open(whatsappURL, "_blank");
 
       //3. Send Mail Notification
-      await emailjs.send(
-      serviceId,
-      interactionTemplateId,
-      formData,
-      publicKey
-    );
-      console.log("Email sent successfully!");
+    //   await emailjs.send(
+    //   serviceId,
+    //   interactionTemplateId,
+    //   formData,
+    //   publicKey
+    // );
+    //   console.log("Email sent successfully!");
+    //CORS policcy restriction with EmailJS integration.
 
       //4. Save to Firestore
       await saveCustomerInteraction(formData);
