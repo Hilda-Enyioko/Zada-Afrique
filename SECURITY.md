@@ -11,6 +11,15 @@ The following table outlines which versions of **Zada Afrique** are currently su
 
 ---
 
+Key changes include:
+- Removal of legacy Firebase credentials from the repository.
+- Transition of API keys and sensitive configurations to **Vercel Environment Variables**.
+- Deactivation of **EmailJS integration** (previously used for contact form messages) due to CORS and API exposure risks.
+- Strengthened **Firestore Security Rules** for write-only access on customer-facing forms.
+- Continuous review of dependency updates to reduce vulnerabilities.
+
+---
+
 ## 🧩 Reporting a Vulnerability
 
 We take security seriously and appreciate your help in keeping **Zada Afrique** safe for users.
