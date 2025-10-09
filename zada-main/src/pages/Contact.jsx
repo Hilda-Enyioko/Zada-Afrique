@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import "../styles/contact.css";
 import { saveContactRecord } from "../services/firebaseService";
-import emailjs from "@emailjs/browser";
+// import emailjs from "@emailjs/browser";
 
 // SECURE KEYS
 const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const contactTemplateId = import.meta.env.VITE_EMAILJS_CONTACT_TEMPLATE_ID;
 const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+const contactPhone = import.meta.env.VITE_CONTACT_PHONE;
 
 function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -20,14 +21,11 @@ function Contact() {
     e.preventDefault();
 
     try {
-        await emailjs.send(
-              serviceId,
-              contactTemplateId,
-              form,
-              publicKey
-            );
-        console.log("Email sent successfully!");
-        alert("Message sent! We'll get back to you soon.");
+      const whatsappNumber = contactPhone;
+      const message = `Hello, my name is ${form.name}.\nMy email is ${form.email}. I'm contacting you for ${form.message}`;
+      const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+      window.open(whatsappURL, "_blank");
         
         //2. Save to Firestore
         await saveContactRecord(form);
